@@ -1,0 +1,10 @@
+<h1> <%= @band.name %> </h1>
+
+
+<h2>Welcome, <%= @band.user.email %></h2>
+<%= link_to "edit band name", edit_band_url(@band) %>
+<%= button_to "Delete name", band_url(@band), method: :delete %>
+
+<br/>
+
+<%= link_to "All band names", bands_url %>

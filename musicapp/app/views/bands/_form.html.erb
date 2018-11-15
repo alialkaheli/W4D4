@@ -1,0 +1,16 @@
+<% _action = band.id ? band_url(band) : bands_url %>
+<% _verb = band.id ? "PATCH" : "POST" %>
+
+<form action="<%= _action %>" method="post">
+	<!-- Question: How do we tell Rails to make a PATCH or DELETE request using an HTML Form -->
+  <!-- Answer: Use a hidden input field with name="_method" and value="PATCH" -->
+  <input type="hidden" name="_method" value="<%= _verb %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <label>Name:
+        <input type="text" name="band[name]" value="<%= band.name %>">
+      </label>
+
+      <input type="submit" value="Submit Name">
+    </form>
+</section>
