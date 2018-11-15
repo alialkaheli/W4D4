@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = find_by_credentials(
-      params[:user][:email]
+    user = User.find_by_credentials(
+      params[:user][:email],
       params[:user][:password]
     )
     if user.nil?
